@@ -3,54 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkatakrishnan Asuri</title>
+    <title>Asuri | Homepage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding: 20px;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
+            box-sizing: border-box;
         }
-        h1, h2, h3 {
+        h1 {
+            text-align: center;
             color: #333;
+            margin-bottom: 20px;
         }
-        a {
+        .navbar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .navbar a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .description {
+            flex: 1;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+        .photo {
+            flex-shrink: 0;
+            max-width: 350px;
+        }
+        .photo img {
+            width: 100%;
+            height: auto;
+        }
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+        .contact-info a {
             color: #007bff;
             text-decoration: none;
         }
-        a:hover {
+        .contact-info a:hover {
             text-decoration: underline;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 40px 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Venkatakrishnan Asuri</h1>
-        <img src="https://i.imgur.com/iGccfNf.jpeg" alt="Venkatakrishnan Asuri" width="300" height="300">
+        <nav class="navbar">
+            <a href="personal.html">Personal</a>
+            <a href="learning.html">Learning</a>
+            <a href="work.html">Work</a>
+        </nav>
     </header>
     <main>
-        <section>
-            <h2>About Me</h2>
-            <p>Hi, I'm Asuri, and I'm a sophomore Engineering Physics student at IIT Madras, India.</p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Project 1</a> - Short description of Project 1.</li>
-                <li><a href="#">Project 2</a> - Short description of Project 2.</li>
-                <!-- Add more projects as needed -->
-            </ul>
-        </section>
-        <section>
-        	<h2> Resume </h2>
-        	<p> You can find my resume <a href="https://doc-10-1k-prod-03-apps-viewer.googleusercontent.com/viewer2/prod-03/pdf/dj70diar8e68uodhfcu1d20ukt897q5b/uvjpa7gtjst68b2honqatpcgkc8pf1pe/1720086075000/3/114292694778579130810/APznzaapAn2y-VWvF1DBxM5ST8K3bDj7aLtSlJzacfCvGPoBFOjCiqo2yqARypIg0dpz7fNkoQY8w3yXTau3LRJD-_gVnFhkvZ9iNGfbTFIMnglHPco6pda4UsfsM6EmgKWET3HbKDB9ei0wIVpE30pIzAqE22Qqm03Vcv19PqtaujFrirA3MiefwPgo-GVOvLR6bl8K0WNC8WgURiVtdnwujn-2CJcObD1zn2L8C57m5nTxjzQA7CsAeBE6Tgnoiiahy8vyYMPkZDowyXlBh6xYgpOLakKo7iOqb7HAaMzDI62K4x_5CcYIr1Sj8xEYQYABZ9zWqKjlcs7krSJsxurpW0lg34jKwh4GVh-F84C4JbnyovdqYHOU-hyGlhH6-sAJXMk1iIy2oTv61WKLjUo5byW4ut5Zsg==?authuser=0&nonce=nrooe09q78fdu&user=114292694778579130810&hash=f3tmlur82f00n99mbtiqid17obl1s2gd">here. (will be updated soon)</a>
-        <section>
-            <h2>Contact Me</h2>
-            <p>You can reach me via email at <a href="mailto:asurivenkatakrishnan@gmail.com">asurivenkatakrishnan@gmail.com</a>.</p>
-        </section>
+        <div class="container">
+            <div class="description">
+                <h2>About Me</h2>
+                <p>Hi, I'm Asuri, and I'm a sophomore Engineering Physics student at IIT Madras, India. I'm interested in Electrical Engineering.</p>
+                <h2>Contact Information</h2>
+                <ul>
+                    <li>Email : <a href="mailto:asurivenkatakrishnan@gmail.com">asurivenkatakrishnan@gmail.com</a></li>
+                    <li>Phone :  <a href="tel:+916380983750">+91 6380 983750</a></li>
+                    <li>GitHub: <a href="https://github.com/asurixyz" target="_blank">asurixyz</a></li>
+                </ul>
+            </div>
+            <div class="photo">
+                <img src="https://i.imgur.com/G254P51.jpg" alt="Venkatakrishnan Asuri">
+            </div>
+        </div>
     </main>
-    <footer>
+    <hr>
+    <footer class="contact-info">
         <p>&copy; 2024 Venkatakrishnan Asuri. All rights reserved.</p>
     </footer>
 </body>
