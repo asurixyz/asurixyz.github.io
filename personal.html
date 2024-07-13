@@ -6,19 +6,22 @@
     <title>Asuri | Personal</title>
     <style>
         body {
-            font-family: Palatino, Georgia, Lucida Bright, Book Antiqua, serif;
-			font-size: 17px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
             box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
         }
         h1, h2 {
             color: #333;
+            transition: color 0.3s;
         }
         a {
             color: #007bff;
             text-decoration: none;
+            transition: color 0.3s;
         }
         a:hover {
             text-decoration: underline;
@@ -39,12 +42,80 @@
         header {
             text-align: center;
             margin-bottom: 20px;
+            position: relative;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode h1, .dark-mode h2 {
+            color: #fff;
+        }
+        .dark-mode .navbar a {
+            color: #007bff; /* Blue color for links in dark mode */
+        }
+        .toggle-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .toggle-container img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
+        }
+        .toggle-container label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .toggle-container input {
+            display: none;
+        }
+        .toggle-container .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-container .switch::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.3s;
+            transform: translateX(2px);
+            top: 2px;
+            left: 2px;
+        }
+        input:checked + .switch {
+            background-color: #2196F3;
+        }
+        input:checked + .switch::before {
+            transform: translateX(14px);
+        }
+        .content {
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Venkatakrishnan Asuri</h1>
+        <h1>Personal Page</h1>
+        <div class="toggle-container">
+            <img src="https://i.imgur.com/XXAPs1V.png" alt="Dark Mode Icon">
+            <label>
+                <input type="checkbox" id="mode-toggle">
+                <span class="switch"></span>
+            </label>
+        </div>
         <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="personal.html">Personal</a>
@@ -53,13 +124,32 @@
         </nav>
     </header>
     <main>
-        <h2>Personal Information</h2>
-        <p>Details about personal interests, hobbies, and other personal information.</p>
-        <!-- Add content relevant to the Personal section here -->
+        <h2>About My Personal Life</h2>
+        <p>Content about your personal life goes here.</p>
     </main>
-    <hr>
-    <footer class="contact-info">
+    <footer>
         <p>&copy; 2024 Venkatakrishnan Asuri. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            if (localStorage.getItem('dark-mode') === 'true') {
+                body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+
+            toggle.addEventListener('change', function () {
+                if (toggle.checked) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('dark-mode', 'true');
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('dark-mode', 'false');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
