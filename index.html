@@ -6,17 +6,25 @@
     <title>Asuri | Homepage</title>
     <style>
         body {
-            font-family: Palatino, Georgia, Lucida Bright, Book Antiqua, serif;
-			font-size: 17px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
             padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
             box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
         }
-        h1 {
-            text-align: center;
+        h1, h2 {
             color: #333;
-            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .navbar {
             text-align: center;
@@ -31,80 +39,135 @@
         .navbar a:hover {
             text-decoration: underline;
         }
-        .container {
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode h1, .dark-mode h2, .dark-mode .navbar a {
+            color: #fff;
+        }
+        .toggle-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .toggle-container img {
+            width: 30px; /* Made the image slightly larger */
+            height: 30px; /* Made the image slightly larger */
+            margin-right: 8px;
+        }
+        .toggle-container label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .toggle-container input {
+            display: none;
+        }
+        .toggle-container .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+        .toggle-container .switch::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: white;
+            transition: transform 0.3s;
+            transform: translateX(2px);
+            top: 2px;
+            left: 2px;
+        }
+        input:checked + .switch {
+            background-color: #2196F3;
+        }
+        input:checked + .switch::before {
+            transform: translateX(14px);
+        }
+        .content {
             display: flex;
             align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
         }
-        .description {
+        .left-side {
             flex: 1;
-            padding-right: 20px;
-            box-sizing: border-box;
         }
-        .photo {
-            flex-shrink: 0;
-            max-width: 350px;
-        }
-        .photo img {
-            width: 100%;
-            height: auto;
-        }
-        .contact-info {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .contact-info ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .contact-info li {
-            margin-bottom: 10px;
-        }
-        .contact-info a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        hr {
-            border: 0;
-            border-top: 1px solid #ccc;
-            margin: 40px 0;
+        .right-side {
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Venkatakrishnan Asuri</h1>
+        <div class="toggle-container">
+            <img src="https://i.imgur.com/XXAPs1V.png" alt="Dark Mode Icon">
+            <label>
+                <input type="checkbox" id="mode-toggle">
+                <span class="switch"></span>
+            </label>
+        </div>
         <nav class="navbar">
+            <a href="index.html">Home</a>
             <a href="personal.html">Personal</a>
             <a href="learning.html">Learning</a>
             <a href="work.html">Work</a>
         </nav>
     </header>
     <main>
-        <div class="container">
-            <div class="description">
+        <div class="content">
+            <div class="left-side">
                 <h2>About Me</h2>
-                <p>I am a sophomore undergraduate student pursuing my B.Tech in <a href = https://physics.iitm.ac.in/program-btech-new.php>Engineering Physics</a> at <a href =  https://www.iitm.ac.in>IIT Madras</a>. I am keenly interested in Electrical Engineering - with the areas of my interest being Computer Architecture, Microprocessors, and VLSI design. I also currently learning about Machine Learning. </p>
+                <p>Hi, I'm Asuri, and I'm a sophomore Engineering Physics student at IIT Madras, India. I'm interested in Electrical Engineering.</p>
                 <h2>Contact Information</h2>
                 <ul>
-                    <li>Email : <a href="mailto:asurivenkatakrishnan@gmail.com">asurivenkatakrishnan@gmail.com</a></li>
-                    <li>Phone :  <a href="tel:+916380983750">+91 6380 983750</a></li>
-                    <li>GitHub: <a href="https://github.com/asurixyz" target="_blank">asurixyz</a></li>
+                    <li>Email: <a href="mailto:asurivenkatakrishnan@gmail.com">asurivenkatakrishnan@gmail.com</a></li>
+                    <li>Phone: +91 6380 983750</li>
+                    <li>GitHub: <a href="https://github.com/asurixyz">asurixyz</a></li>
                 </ul>
             </div>
-            <div class="photo">
-                <img src="https://i.imgur.com/G254P51.jpg" alt="Venkatakrishnan Asuri">
+            <div class="right-side">
+                <img src="https://i.imgur.com/G254P51.jpg" alt="Venkatakrishnan Asuri" width="350" height="450">
             </div>
         </div>
     </main>
-    <hr>
-    <footer class="contact-info">
-        <p>&copy; 2024 Venkatakrishnan Asuri. All rights reserved.</p>
+	<hr>
+    <footer>
+        <p><center>&copy; 2024 Venkatakrishnan Asuri. All rights reserved.</center></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('mode-toggle');
+            const body = document.body;
+
+            if (localStorage.getItem('dark-mode') === 'true') {
+                body.classList.add('dark-mode');
+                toggle.checked = true;
+            }
+
+            toggle.addEventListener('change', function () {
+                if (toggle.checked) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('dark-mode', 'true');
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('dark-mode', 'false');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
