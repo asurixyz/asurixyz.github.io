@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkatakrishnan Asuri - Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      line-height: 1.6;
+      background-color: #fafafa;
+      color: #222;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Top Navigation Bar */
+    .navbar {
+      background-color: #f0f0f0;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .navbar-title {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .navbar-link {
+      font-size: 1em;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: 500;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      color: #111;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    .intro-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-image img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      color: #666;
+    }
+
+    .bio {
+      margin: 10px 0;
+    }
+
+    .resume-link a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    .education-card, .achievement-card, .initiative-card, .personal-card, .project-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .achievements-grid, .project-grid, .initiatives-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-status {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .initiative-link a {
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    footer {
+      font-size: 0.9em;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .contact-link i {
+      margin-right: 5px;
+    }
+
+    .achievement-card ul {
+      list-style-type: square;
+      padding-left: 20px;
+      margin-left: 0;
+    }
+
+    .achievement-card li {
+      margin-bottom: 5px;
+    }
+
+    @media (min-width: 600px) {
+      .intro-container {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+      }
+
+      .navbar-title {
+        font-size: 1.6em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="navbar">
+    <div class="navbar-title">Venkatakrishnan Asuri</div>
+    <a class="navbar-link" href="blog.html">Visit Blog</a>
+  </div>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="intro-container">
+        <div class="profile-image">
+          <img src="logo1.png" alt="Venkatakrishnan Asuri" />
+        </div>
+        <div class="intro-text">
+          <p class="subtitle">Undergraduate Student | IIT Madras</p>
+          <p class="bio">
+            I'm Venkat, a sophomore student at IIT Madras. I'm interested in Electrical Engineering, Mathematics, and Complexity Science. I'm also a keen geopolitical and global markets observer.
+          </p>
+          <p class="resume-link">
+            <a href="CV.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-card">
+        <h3>IIT Madras</h3>
+        <p>Bachelors in Engineering Physics</p>
+        <p><span class="highlight">Expected Graduation:</span> 2027</p>
+        <p><span class="highlight">CPA:</span> 8.84</p>
+      </div>
+      <div class="education-card">
+        <h3>Maharishi Vidya Mandir, Chetpet</h3>
+        <p>High School</p>
+        <p><span class="highlight">Class XII:</span> 95.2%</p>
+      </div>
+      <div class="education-card">
+        <h3>DAV Boys School, Gopalapuram</h3>
+        <p>Middle School</p>
+        <p><span class="highlight">Class X:</span> 97.6%</p>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <h3>Competitive Exams</h3>
+          <ul>
+            <li><span class="highlight">JEE Advanced 2023:</span> AIR 1236</li>
+            <li><span class="highlight">JEE Mains 2023:</span> AIR 1773</li>
+            <li><span class="highlight">ISI B.Math 2023:</span> AIR 34</li>
+            <li><span class="highlight">IISER Aptitude Test 2023:</span> AIR 286</li>
+            <li><span class="highlight">NEST 2023:</span> AIR 35</li>
+          </ul>
+        </div>
+        <div class="achievement-card">
+          <h3>Olympiads & Others</h3>
+          <ul>
+            <li><span class="highlight">INChO 2023:</span> Top 1% in NSEC</li>
+            <li><span class="highlight">NSEP 2023:</span> Top 1% in State</li>
+            <li><span class="highlight">INOI 2021 & 2020:</span> Qualified via ZIO</li>
+            <li><span class="highlight">IBM QC Course 2021:</span> Completed</li>
+            <li><span class="highlight">NTSE Scholar:</span> Top 2000 nationally</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="personal-section">
+      <h2>Personal</h2>
+      <div class="personal-card">
+        <p>I love geopolitics, history, and languages. I speak English, Tamil, Hindi, Russian, and French. I also enjoy chess — Fischer, Carlsen, Anand are my favorites. And I’ll never say no to dosa and filter coffee.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Time Series Modelling</h3>
+          <p class="project-status">In progress</p>
+          <p>Forecasting non-standard time series, beyond ARIMA — exploring alternative models.</p>
+          <p><strong>Supervisor:</strong> Prof. Anindya S Chakrabarti, IIM Ahmedabad</p>
+        </div>
+        <div class="project-card">
+          <h3>Quantum Computing - Google QuantumAI</h3>
+          <p class="project-status">Ongoing</p>
+          <p>Part of a two-semester hands-on quantum computing course by Google Quantum.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="initiatives">
+      <h2>Initiatives & Talks</h2>
+      <div class="initiatives-grid">
+        <div class="initiative-card">
+          <h3>SGN2024: Spins, Games and Networks</h3>
+          <p><em>December 11-24, 2024 | IMSc Chennai</em></p>
+          <p>Attended SGN2024 at IMSc, Chennai — interdisciplinary workshop on complex systems. Presented ideas on spin models.</p>
+          <p class="initiative-link">
+            <a href="SGN2024.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Presentation Notes</a>
+            <a href="https://www.imsc.res.in/~sitabhra/meetings/sgn24/" target="_blank"><i class="fas fa-external-link-alt"></i> Workshop Site</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contact-info">
+      <a href="mailto:asuri@smail.iitm.ac.in" class="contact-link"><i class="fas fa-envelope"></i> asuri@smail.iitm.ac.in</a>
+      <a href="https://github.com/asurixyz" target="_blank" class="contact-link"><i class="fab fa-github"></i> asurixyz</a>
+    </div>
+    <p>&copy; 2024 Venkatakrishnan Asuri</p>
+  </footer>
+
+</body>
+</html>
