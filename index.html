@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venkatakrishnan Asuri</title>
+  <meta name="google-site-verification" content="_UJxLm56wl5sfSQwEjBsp6Z8RbJwcatRwGlnX3dD5BU" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.7;
+      background: #fff;
+      color: #111;
+      padding: 0;
+      margin: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    .dark-mode {
+      background: #181818;
+      color: #f5f5f5;
+    }
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 8px #e0e0e0;
+      border-bottom: none;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background 0.3s, color 0.3s;
+      font-family: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .dark-mode .navbar {
+      background: #222;
+      color: #f5f5f5;
+      box-shadow: 0 2px 8px #111;
+    }
+    .navbar-title {
+      font-family: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #111;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: color 0.3s;
+      margin: 0;
+      padding: 0;
+      width: auto;
+      text-align: center;
+    }
+    .dark-mode .navbar-title {
+      color: #f5f5f5;
+    }
+    .navbar-link {
+      font-family: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      border: 1px solid #111;
+      border-radius: 4px;
+      padding: 6px 12px;
+      transition: background 0.2s, color 0.2s, border 0.3s;
+      margin-left: 8px;
+      white-space: nowrap;
+    }
+    .navbar-link:hover {
+      background: #111;
+      color: #fff;
+    }
+    .dark-mode .navbar-link {
+      color: #f5f5f5;
+      border: 1px solid #f5f5f5;
+    }
+    .dark-mode .navbar-link:hover {
+      background: #f5f5f5;
+      color: #181818;
+    }
+    .toggle-mode-btn {
+      background: none;
+      border: none;
+      font-size: 1.3em;
+      cursor: pointer;
+      margin-right: 10px;
+      color: #111;
+      transition: color 0.3s;
+    }
+    .dark-mode .toggle-mode-btn {
+      color: #f5f5f5;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1, h2, h3 {
+      font-family: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    h1, h2 {
+      color: #3a3a2c;
+      font-weight: 600;
+    }
+
+    h3 {
+      color: #6d4c1b;
+      font-weight: 600;
+    }
+
+    .dark-mode h1,
+    .dark-mode h2 {
+      color: #ffeeb3;
+    }
+
+    .dark-mode h3 {
+      color: #ffb74d;
+    }
+
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+      margin-top: 30px;
+      color: #111;
+    }
+
+    .intro-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-image img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #666;
+      margin: 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .bio {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 300;
+      margin: 10px 0;
+    }
+
+    .resume-link a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    .education-card, .achievement-card, .initiative-card, .personal-card, .project-card {
+      background-color: #fff;
+      border: none;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px #e0e0e0;
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .dark-mode .education-card,
+    .dark-mode .achievement-card,
+    .dark-mode .initiative-card,
+    .dark-mode .personal-card,
+    .dark-mode .project-card {
+      background-color: #232323;
+      color: #f5f5f5;
+      box-shadow: 0 2px 8px #111;
+    }
+
+    .highlight {
+      font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 500;
+      color: #111;
+    }
+
+    b, strong {
+      color: #111;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .dark-mode .highlight,
+    .dark-mode b,
+    .dark-mode strong {
+      color: #ffe082;
+    }
+
+    .achievements-grid, .project-grid, .initiatives-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-status {
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .initiative-link a {
+      margin-right: 10px;
+      display: inline-block;
+      color: #2196f3 !important;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .initiative-link a:hover {
+      color: #1565c0 !important;
+    }
+
+    .dark-mode .initiative-link a {
+      color: #90caf9 !important;
+    }
+
+    .dark-mode .initiative-link a:hover {
+      color: #42a5f5 !important;
+    }
+
+    footer {
+      font-size: 0.9em;
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .dark-mode footer {
+      background-color: #181818;
+      color: #f5f5f5;
+    }
+
+    .dark-mode .contact-link {
+      color: #ffeeb3;
+    }
+
+    .contact-link {
+      display: inline-block;
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .contact-link i {
+      margin-right: 5px;
+    }
+
+    .achievement-card ul {
+      list-style-type: square;
+      padding-left: 20px;
+      margin-left: 0;
+    }
+
+    .achievement-card li {
+      margin-bottom: 5px;
+    }
+
+    .project-card img {
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #ccc;
+    }
+
+    .personal-card ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .personal-card li {
+      margin-bottom: 8px;
+    }
+
+    .achievement-card h3, .education-card h3, .project-card h3, .initiative-card h3 {
+      font-family: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+
+    @media (min-width: 600px) {
+      .intro-container {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+      }
+
+      .navbar-title {
+        font-size: 1.6em;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 10px;
+      }
+      .intro-container {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="navbar">
+    <div style="width: 200px; display: flex; justify-content: flex-start;">
+    </div>
+    <div class="navbar-title" style="position: absolute; left: 50%; transform: translateX(-50%);">
+      <span class="lang-en">Venkatakrishnan Asuri</span>
+      <span class="lang-ru" style="display:none">Венкатакришнан Асури</span>
+    </div>
+    <div style="width: 200px; display: flex; justify-content: flex-end; align-items: center; gap: 4px;">
+      <button class="lang-toggle-btn" id="langRuBtn" title="Перевести на русский" style="font-size:1.3em;cursor:pointer;background:none;border:none;vertical-align:middle;">
+        <img id="flagRu" src="https://flagcdn.com/w20/ru.png" alt="RU" style="width:24px;height:18px;vertical-align:middle;" />
+      </button>
+      <button class="lang-toggle-btn" id="langEnBtn" title="Switch to English" style="display:none;font-size:1.3em;cursor:pointer;background:none;border:none;vertical-align:middle;">
+        <img id="flagEn" src="https://upload.wikimedia.org/wikipedia/en/a/ae/Flag_of_the_United_Kingdom.svg" alt="EN" style="width:24px;height:18px;vertical-align:middle;" />
+      </button>
+      <button class="toggle-mode-btn" id="toggleModeBtn" title="Toggle light/dark mode">🌙</button>
+      <a class="navbar-link" href="https://svatantravani.wordpress.com" target="_blank"><span class="lang-en">Svatantravāṇī</span><span class="lang-ru" style="display:none">Svatantravāṇī</span></a>
+    </div>
+  </div>
+
+  <main>
+    <section id="about" class="hero">
+      <div class="intro-container">
+        <div class="profile-image">
+          <img src="logo10.jpeg" alt="Venkatakrishnan Asuri" />
+        </div>
+        <div class="intro-text">
+          <p class="subtitle">
+            <span class="lang-en">Undergraduate Student | IIT Madras</span>
+            <span class="lang-ru" style="display:none">Студент бакалавриата | ИИТ Мадрас</span>
+          </p>
+          <p class="bio">
+            <span class="lang-en">I'm Venkatakrishnan, a second-year undergraduate student at IIT Madras. I'm passionate about Economics and Mathematics.</span>
+            <span class="lang-ru" style="display:none">Я Венкатакришнан, студент второго курса ИИТ Мадрас. Я увлекаюсь экономикой и математикой.</span>
+          </p>
+          <p class="resume-link">
+            <a href="CV1.pdf" target="_blank"><i class="fas fa-file-pdf"></i> <span class="lang-en">Resume</span><span class="lang-ru" style="display:none">Резюме</span></a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="personal-section">
+      <h2><span class="lang-en">Personal</span><span class="lang-ru" style="display:none">Личное</span></h2>
+      <div class="personal-card">
+        <p><span class="lang-en">I follow geopolitics and global markets keenly, and am passionate about languages and economics. I am a polyglot — I speak Russian, French, Hindi, and Tamil fluently. I love chess, and have loved it ever since I started playing at age 5. I'm not a foodie, but I'd never say no to dosa and filter coffee.</span><span class="lang-ru" style="display:none">Я внимательно слежу за геополитикой и мировыми рынками, а также увлекаюсь языками и экономикой. Я полиглот — свободно говорю на русском, французском, хинди и тамильском. Я люблю шахматы с пяти лет. Я не гурман, но никогда не откажусь от досы и фильтр-кофе.</span></p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2><span class="lang-en">Education</span><span class="lang-ru" style="display:none">Образование</span></h2>
+      <div class="education-card">
+        <h3><span class="lang-en">IIT Madras</span><span class="lang-ru" style="display:none">ИИТ Мадрас</span></h3>
+        <p><span class="lang-en">Bachelors in Engineering Physics</span><span class="lang-ru" style="display:none">Бакалавр по инженерной физике</span></p>
+        <p><span class="highlight"><span class="lang-en">Expected Graduation:</span><span class="lang-ru" style="display:none">Ожидаемый выпуск:</span></span> <b>2027</b></p>
+      </div>
+      <div class="education-card">
+        <h3><span class="lang-en">Maharishi Vidya Mandir, Chetpet</span><span class="lang-ru" style="display:none">Махариши Видья Мандир, Четпет</span></h3>
+        <p><span class="lang-en">High School</span><span class="lang-ru" style="display:none">Старшая школа</span></p>
+        <p><span class="highlight"><span class="lang-en">Class XII:</span><span class="lang-ru" style="display:none">12 класс:</span></span> <b>95.2%</b></p>
+      </div>
+      <div class="education-card">
+        <h3><span class="lang-en">DAV Boys School, Gopalapuram</span><span class="lang-ru" style="display:none">Школа для мальчиков DAV, Гопалапурам</span></h3>
+        <p><span class="lang-en">Middle School</span><span class="lang-ru" style="display:none">Средняя школа</span></p>
+        <p><span class="highlight"><span class="lang-en">Class X:</span><span class="lang-ru" style="display:none">10 класс:</span></span> <b>97.6%</b></p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2><span class="lang-en">Projects</span><span class="lang-ru" style="display:none">Проекты</span></h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3><span class="lang-en">Time Series Modelling</span><span class="lang-ru" style="display:none">Моделирование временных рядов</span></h3>
+          <p class="project-status"><span class="lang-en">In progress</span><span class="lang-ru" style="display:none">В процессе</span></p>
+          <p><span class="lang-en">Forecasting non-standard time series, beyond ARIMA — exploring alternative models.</span><span class="lang-ru" style="display:none">Прогнозирование нестандартных временных рядов, выходящих за рамки ARIMA — исследование альтернативных моделей.</span></p>
+          <p><strong><span class="lang-en">Supervisor:</span><span class="lang-ru" style="display:none">Научный руководитель:</span></strong> <span class="lang-en">Prof. Anindya S Chakrabarti, IIM Ahmedabad</span><span class="lang-ru" style="display:none">Проф. Анинья С. Чакраборти, ИИМ Ахмедабад</span></p>
+        </div>
+        <div class="project-card">
+          <h3><span class="lang-en">Quantum Computing - Google QuantumAI</span><span class="lang-ru" style="display:none">Квантовые вычисления — <span class="lang-en">Google QuantumAI</span><span class="lang-ru" style="display:none">Гугл КвантумAI</span></span></h3>
+          <p class="project-status"><span class="lang-en">Completed</span><span class="lang-ru" style="display:none">Завершено</span></p>
+          <p><span class="lang-en">Completed a two-semester hands-on quantum computing course by Google QuantumAI, securing an <b>A grade</b> with a score of <b>99%</b>.<br>Certificate of completion:</span><span class="lang-ru" style="display:none">Завершил двухсеместровый практический курс по квантовым вычислениям от Google QuantumAI, получил <b>оценку A</b> и <b>99%</b>.<br>Сертификат:</span></p>
+          <img src="certif.jpg" alt="Quantum Computing Certificate" style="max-width:100%;border-radius:8px;margin-top:10px;box-shadow:0 2px 8px #ccc;" />
+        </div>
+      </div>
+    </section>
+
+    <section id="initiatives">
+      <h2><span class="lang-en">Initiatives & Talks</span><span class="lang-ru" style="display:none">Инициативы и доклады</span></h2>
+      <div class="initiatives-grid">
+        <div class="initiative-card">
+          <h3><span class="lang-en">SGN2024: Spins, Games and Networks</span><span class="lang-ru" style="display:none">SGN2024: Спины, игры и сети</span></h3>
+          <p><em><span class="lang-en">December 11-24, 2024 | IMSc Chennai</span><span class="lang-ru" style="display:none">11-24 декабря 2024 | IMSc Ченнаи</span></em></p>
+          <p><span class="lang-en">Attended SGN2024 at IMSc, Chennai — interdisciplinary workshop on complex systems. Presented ideas on spin models.</span><span class="lang-ru" style="display:none">Участвовал в SGN2024 в IMSc, Ченнаи — междисциплинарный воркшоп по сложным системам. Представил идеи по спиновым моделям.</span></p>
+          <p class="initiative-link">
+            <a href="https://www.imsc.res.in/~sitabhra/meetings/sgn24/assets/presentations/SGN24_Group8.pdf" target="_blank"><i class="fas fa-file-pdf"></i> <span class="lang-en">Presentation Notes</span><span class="lang-ru" style="display:none">Презентация</span></a>
+            <a href="https://www.imsc.res.in/~sitabhra/meetings/sgn24/" target="_blank"><i class="fas fa-external-link-alt"></i> <span class="lang-en">Workshop Site</span><span class="lang-ru" style="display:none">Сайт семинара</span></a>
+          </p>
+          <img src="group_photo.jpg" alt="SGN2024 Group Photo" style="max-width:100%;border-radius:8px;margin-top:10px;box-shadow:0 2px 8px #ccc;" />
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h2><span class="lang-en">Achievements</span><span class="lang-ru" style="display:none">Достижения</span></h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <h3><span class="lang-en">Competitive Exams</span><span class="lang-ru" style="display:none">Олимпиады и экзамены</span></h3>
+          <ul>
+            <li><span class="highlight"><span class="lang-en">JEE Advanced 2023:</span><span class="lang-ru" style="display:none">JEE Advanced 2023:</span></span> <b><span class="lang-en">All-India Rank 1236</span><span class="lang-ru" style="display:none">1236 место по Индии</span></b> <span class="lang-en">out of 150,000 candidates</span><span class="lang-ru" style="display:none">из 150 000 участников</span></li>
+            <li><span class="highlight"><span class="lang-en">JEE Mains 2023:</span><span class="lang-ru" style="display:none">JEE Mains 2023:</span></span> <b><span class="lang-en">All-India Rank 1773</span><span class="lang-ru" style="display:none">1773 место по Индии</span></b> <span class="lang-en">out of 2,200,000 candidates</span><span class="lang-ru" style="display:none">из 2 200 000 участников</span></li>
+            <li><span class="highlight"><span class="lang-en">ISI B.Math Entrance 2023:</span><span class="lang-ru" style="display:none">ISI B.Math Entrance 2023:</span></span> <b><span class="lang-en">All-India Rank 34</span><span class="lang-ru" style="display:none">34 место по Индии</span></b></li>
+            <li><span class="highlight"><span class="lang-en">IISER Aptitude Test 2023:</span><span class="lang-ru" style="display:none">IISER Aptitude Test 2023:</span></span> <b><span class="lang-en">All-India Rank 286</span><span class="lang-ru" style="display:none">286 место по Индии</span></b> <span class="lang-en">out of 35,000 candidates</span><span class="lang-ru" style="display:none">из 35 000 участников</span></li>
+            <li><span class="highlight"><span class="lang-en">NEST 2023:</span><span class="lang-ru" style="display:none">NEST 2023:</span></span> <b><span class="lang-en">All-India Rank 35</span><span class="lang-ru" style="display:none">35 место по Индии</span></b> <span class="lang-en">out of 45,000 candidates</span><span class="lang-ru" style="display:none">из 45 000 участников</span></li>
+          </ul>
+        </div>
+        <div class="achievement-card">
+          <h3><span class="lang-en">Olympiads & Scholarships</span><span class="lang-ru" style="display:none">Олимпиады и стипендии</span></h3>
+          <ul>
+            <li><span class="highlight"><span class="lang-en">NTSE Scholar 2021:</span><span class="lang-ru" style="display:none">Стипендиат NTSE 2021:</span></span> <span class="lang-en">Ranked among the <b>top 2000</b> of 100,000 candidates nationwide</span><span class="lang-ru" style="display:none">Вошёл в <b>топ-2000</b> из 100 000 участников по всей стране</span></li>
+            <li><span class="highlight"><span class="lang-en">INChO 2023:</span><span class="lang-ru" style="display:none">INChO 2023:</span></span> <span class="lang-en">Placed among the <b>top 1%</b> in NSEC and qualified for INChO 2023</span><span class="lang-ru" style="display:none">Вошёл в <b>топ-1%</b> на NSEC и прошёл в INChO 2023</span></li>
+            <li><span class="highlight"><span class="lang-en">NSEP 2023:</span><span class="lang-ru" style="display:none">NSEP 2023:</span></span> <span class="lang-en">Placed among the <b>top 1%</b> of the state in NSEP 2023</span><span class="lang-ru" style="display:none">Вошёл в <b>топ-1%</b> штата на NSEP 2023</span></li>
+            <li><span class="highlight"><span class="lang-en">INOI 2021 & 2020:</span><span class="lang-ru" style="display:none">INOI 2021 и 2020:</span></span> <span class="lang-en">Cleared Zonal Informatics Olympiad and qualified for <b>INOI 2020, 2021</b></span><span class="lang-ru" style="display:none">Прошёл Зональную олимпиаду по информатике и квалифицировался на <b>INOI 2020, 2021</b></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="extracurriculars">
+      <h2><span class="lang-en">Extracurriculars</span><span class="lang-ru" style="display:none">Внеклассные занятия</span></h2>
+      <div class="personal-card">
+        <ul>
+          <li><span class="highlight"><span class="lang-en">Carnatic Musician:</span><span class="lang-ru" style="display:none">Карнатикский музыкант:</span></span> <span class="lang-en">Trained in Carnatic Vocal for <b>13 years</b> and play the Carnatic Violin</span><span class="lang-ru" style="display:none">Занимаюсь карнатик-вокалом <b>13 лет</b> и играю на карнатик-скрипке</span></li>
+          <li><span class="highlight"><span class="lang-en">Chess Player:</span><span class="lang-ru" style="display:none">Шахматист:</span></span> <span class="lang-en">Playing actively for <b>14 years</b> and participated in tournaments</span><span class="lang-ru" style="display:none">Играю активно <b>14 лет</b> и участвовал в турнирах</span></li>
+          <li><span class="highlight"><span class="lang-en">Artist:</span><span class="lang-ru" style="display:none">Художник:</span></span> <span class="lang-en">Completed <b>10 course levels</b> with a certificate at GlobalArt India</span><span class="lang-ru" style="display:none">Прошёл <b>10 уровней</b> курсов с сертификатом в GlobalArt India</span></li>
+          <li><span class="highlight"><span class="lang-en">Football Player:</span><span class="lang-ru" style="display:none">Футболист:</span></span> <span class="lang-en">Played for Mahogany FC for <b>8 years</b>, competing in city-level tournaments</span><span class="lang-ru" style="display:none">Играл за Mahogany FC <b>8 лет</b>, участвовал в городских турнирах</span></li>
+          <li><span class="highlight"><span class="lang-en">Polyglot:</span><span class="lang-ru" style="display:none">Полиглот:</span></span> <span class="lang-en">Fluent in Russian (completed <b>2 levels</b>) and French; proficient in Tamil, Hindi, and Sanskrit</span><span class="lang-ru" style="display:none">Свободно владею русским (закончил <b>2 уровня</b>) и французским; хорошо знаю тамильский, хинди и санскрит</span></li>
+          <li><span class="highlight"><span class="lang-en">Geopolitics Enthusiast:</span><span class="lang-ru" style="display:none">Увлекаюсь геополитикой:</span></span> <span class="lang-en">Keenly follow global financial markets and geopolitics</span><span class="lang-ru" style="display:none">Внимательно слежу за мировыми финансовыми рынками и геополитикой</span></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contact-info">
+      <a href="mailto:asuri@smail.iitm.ac.in" class="contact-link"><i class="fas fa-envelope"></i> <span class="lang-en">asuri@smail.iitm.ac.in</span><span class="lang-ru" style="display:none">asuri@smail.iitm.ac.in</span></a>
+      <a href="https://github.com/asurixyz" target="_blank" class="contact-link"><i class="fab fa-github"></i> <span class="lang-en">asurixyz</span><span class="lang-ru" style="display:none">asurixyz</span></a>
+      <a href="https://www.linkedin.com/in/venkatakrishnan-asuri-887b3a349/" target="_blank" class="contact-link"><i class="fab fa-linkedin"></i> <span class="lang-en">Venkatakrishnan Asuri</span><span class="lang-ru" style="display:none">Венкатакришнан Асури</span></a>
+    </div>
+    <p><span class="lang-en">&copy; 2025 Venkatakrishnan Asuri</span><span class="lang-ru" style="display:none">&copy; 2025 Венкатакришнан Асури</span></p>
+  </footer>
+
+  <script>
+    // Light/Dark mode toggle
+    const toggleBtn = document.getElementById('toggleModeBtn');
+    const body = document.body;
+    // Default to dark mode
+    let dark = true;
+    body.classList.add('dark-mode');
+    toggleBtn.textContent = '☀️';
+    toggleBtn.addEventListener('click', function() {
+      dark = !dark;
+      body.classList.toggle('dark-mode');
+      toggleBtn.textContent = dark ? '☀️' : '🌙';
+    });
+
+    // Language toggle
+    const langBtns = {
+      en: document.getElementById('langEnBtn'),
+      ru: document.getElementById('langRuBtn')
+    };
+    const flagIcons = {
+      en: document.getElementById('flagEn'),
+      ru: document.getElementById('flagRu')
+    };
+    let currentLang = 'en';
+    function setLanguage(lang) {
+      currentLang = lang;
+      // Hide all language spans
+      document.querySelectorAll('.lang-en, .lang-ru').forEach(el => el.style.display = 'none');
+      // Show only the selected language
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = '');
+      // Show/hide flag buttons
+      langBtns.en.style.display = (lang === 'en') ? 'none' : '';
+      langBtns.ru.style.display = (lang === 'ru') ? 'none' : '';
+    }
+    // Initial state: English
+    setLanguage('en');
+    langBtns.ru.addEventListener('click', function() { setLanguage('ru'); });
+    langBtns.en.addEventListener('click', function() { setLanguage('en'); });
+  </script>
+
+</body>
+</html>
