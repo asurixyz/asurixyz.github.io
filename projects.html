@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Venkatakrishnan Asuri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-white: #000000;
+            --bg-light: #000000;
+            --text-primary: #eaeaec;
+            --text-secondary: #a1a1aa;
+            --accent-blue: #4ea3ff;
+            --border-light: #2a2a2e;
+            --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.6);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.8);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', 'Inter', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .display-font {
+            font-family: 'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .mono-font {
+            font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-blue), #0056cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-elegant {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        
+        .card-elegant:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+            color: var(--text-secondary);
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-elegant {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn-elegant:hover {
+            background: #0056cc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+        
+        .btn-elegant-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn-elegant-secondary:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        .project-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+        }
+        
+        .tech-tag {
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(0, 122, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="display-font text-xl font-bold text-gradient">
+                    <a href="index.html">Venkatakrishnan Asuri</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="projects.html" class="nav-link text-accent-blue font-medium">Projects</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="display-font text-4xl font-bold mb-6 text-gradient">Projects</h1>
+            <p class="text-lg text-secondary mb-6">Academic research, personal initiatives, and collaborative endeavors</p>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="display-font text-3xl font-bold text-center mb-10 text-gradient">Featured Projects</h2>
+            
+            <div class="card-elegant p-6 mb-10">
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Time Series</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">IIM Ahmedabad</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">LaTeX/Beamer</span>
+                        </div>
+                        <h3 class="display-font text-2xl font-semibold mb-4">Forecasting with Time Series</h3>
+                        <p class="text-secondary mb-5">As part of a guided academic project under the supervision of Professor Anindya S. Chakrabarti at IIM Ahmedabad, I developed a comprehensive set of seven slide decks focused on time series analysis. References included Hyndman, Tsay, and Brockwell–Davis. Each deck was crafted in LaTeX using Beamer, emphasizing mathematical clarity, succinct derivations, and practical applications under close mentorship.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">Decomposition, stationarity transforms, exponential smoothing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">ARIMA/Seasonal ARIMA modeling, likelihood-based estimation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">NNAR introduction with real company sales data</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">Diagnostics: ACF/PACF, unit root tests, information criteria</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/asurixyz/TSM" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Source Code →</a>
+                    </div>
+                    <div class="bg-light p-5 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-primary">Scope</h4>
+                        <div class="space-y-3 text-sm text-primary">
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Slide Decks</span>
+                                <span class="font-semibold text-2xl text-accent-blue">7</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Core Methods</span>
+                                <span class="font-semibold text-2xl text-green-600">ARIMA, NNAR</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Tools</span>
+                                <span class="font-semibold text-2xl text-yellow-600">Beamer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-elegant p-6 mb-10">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Urban Planning</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Data Analysis</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Policy Research</span>
+                        </div>
+                        <h3 class="display-font text-2xl font-semibold mb-4">National Mission for Urban Roads (NMUR)</h3>
+                        <p class="text-secondary mb-5">Comprehensive budget analysis of India's major metro cities examining decadal infrastructure spending patterns. Developed evidence-based policy recommendations for sustainable urban development with focus on pedestrian infrastructure allocation.</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">Analyzed infrastructure spending across 6 major Indian cities</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">Identified systemic bias towards auto-centric development</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                                <span class="text-sm text-primary">Developed policy framework with 25% pedestrian infrastructure mandate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-light p-5 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-primary">Key Metrics</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Cities Analyzed</span>
+                                <span class="font-semibold text-2xl text-accent-blue">6</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Budget Allocation Identified</span>
+                                <span class="font-semibold text-2xl text-yellow-600">&lt;5%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Proposed Pedestrian Allocation</span>
+                                <span class="font-semibold text-2xl text-green-600">25%</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Maintenance Cost Reduction</span>
+                                <span class="font-semibold text-2xl text-accent-blue">80%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-elegant p-6 mb-10">
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Data Visualization</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Dashboard</span>
+                            <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Global Strategy</span>
+                        </div>
+                        <h3 class="display-font text-2xl font-semibold mb-1">LUMEN</h3>
+                        <p class="text-secondary mb-4">Illumination Through Data</p>
+                        <p class="text-secondary mb-5">A dashboard offering curated datasets and interactive visuals on the forces shaping the 21st century. Organized into global, regional, maritime, and neighborhood sections, it examines how economic development, demographic change, and strategic competition interrelate. Highlights include a map of global trade partnerships, long-range national indicators, and a focused view of investment flows in key maritime corridors.</p>
+                        <a href="https://asurixyz.github.io/LUMEN/" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">View Dashboard →</a>
+                    </div>
+                    <div class="bg-light p-5 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-primary">Key Metrics</h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Sections</span>
+                                <span class="font-semibold text-2xl text-accent-blue">4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Maritime Corridors</span>
+                                <span class="font-semibold text-2xl text-green-600">4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Neighborhood Countries</span>
+                                <span class="font-semibold text-2xl text-purple-600">5</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Indicators Tracked</span>
+                                <span class="font-semibold text-2xl text-yellow-600">4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-secondary">Years Covered</span>
+                                <span class="font-semibold text-2xl text-accent-blue">2000–2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Projects -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="display-font text-3xl font-bold text-center mb-10 text-gradient">Academic Research</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="project-card p-6 rounded-lg card-elegant">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Time Series</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">IIM Ahmedabad</span>
+                    </div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Forecasting with Time Series</h3>
+                    <p class="text-secondary mb-4 text-sm">Developed comprehensive slide decks on time series analysis using LaTeX, covering ARIMA and Neural Network Autoregression (NNAR). Applied concepts to real-world company sales data.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-secondary">Dec 2024 - Jul 2025</span>
+                        <span class="text-accent-blue font-medium">Guided Project</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card p-6 rounded-lg card-elegant">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Physics</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">IMSc Workshop</span>
+                    </div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Spin Systems in Social Networks</h3>
+                    <p class="text-secondary mb-4 text-sm">Utilized Ising Model and Metropolis-Hastings algorithm to simulate spin systems on networks. Investigated influence of "zealots" on network opinion dynamics.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-secondary">Dec 2024</span>
+                        <span class="text-green-600 font-medium">Workshop</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card p-6 rounded-lg card-elegant">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Quantum Computing</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Google Quantum AI</span>
+                    </div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Quantum Computing Certification</h3>
+                    <p class="text-secondary mb-4 text-sm">Completed two-semester course on quantum computing with Cirq, achieving A grade (99%). Comprehensive understanding of quantum algorithms and applications.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-secondary">2025</span>
+                        <span class="text-yellow-600 font-medium">Certified</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card p-6 rounded-lg card-elegant">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Finance</span>
+                        <span class="tech-tag px-3 py-1 rounded-full text-sm font-medium">Wharton</span>
+                    </div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Finance & Accounting Specialization</h3>
+                    <p class="text-secondary mb-4 text-sm">Completed specialization from University of Pennsylvania covering financial accounting, corporate finance, valuation, and financial modeling.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-secondary">2025</span>
+                        <span class="text-accent-blue font-medium">Certified</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Skills & Technologies -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="display-font text-3xl font-bold text-center mb-10 text-gradient">Skills & Technologies</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-elegant p-6 rounded-lg text-center">
+                    <h4 class="font-semibold mb-4 text-accent-blue">Programming</h4>
+                    <div class="space-y-2 text-sm text-primary">
+                        <div>Python</div>
+                        <div>C++</div>
+                        <div>C</div>
+                        <div>R</div>
+                        <div>Verilog</div>
+                    </div>
+                </div>
+                
+                <div class="card-elegant p-6 rounded-lg text-center">
+                    <h4 class="font-semibold mb-4 text-green-600">Technical</h4>
+                    <div class="space-y-2 text-sm text-primary">
+                        <div>Quantum Computing</div>
+                        <div>Time Series Analysis</div>
+                        <div>Financial Forecasting</div>
+                        <div>AutoCAD</div>
+                        <div>LaTeX</div>
+                    </div>
+                </div>
+                
+                <div class="card-elegant p-6 rounded-lg text-center">
+                    <h4 class="font-semibold mb-4 text-purple-600">Research</h4>
+                    <div class="space-y-2 text-sm text-primary">
+                        <div>Academic Writing</div>
+                        <div>Policy Analysis</div>
+                        <div>Statistical Modeling</div>
+                        <div>Data Visualization</div>
+                        <div>Urban Planning</div>
+                    </div>
+                </div>
+                
+                <div class="card-elegant p-6 rounded-lg text-center">
+                    <h4 class="font-semibold mb-4 text-accent-blue">Languages</h4>
+                    <div class="space-y-2 text-sm text-primary">
+                        <div>English (Native)</div>
+                        <div>Tamil (Native)</div>
+                        <div>Hindi (Professional)</div>
+                        <div>Russian (Fluent)</div>
+                        <div>French (Basic)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-14 bg-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="display-font text-3xl font-bold mb-6 text-gradient">Interested in Collaboration?</h2>
+            <p class="text-lg text-secondary mb-6">I'm always open to discussing research opportunities, academic projects, and innovative ideas in economics, mathematics, and international relations.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="btn-elegant px-8 py-3 rounded-lg">
+                    Get In Touch
+                </a>
+                <a href="blog.html" class="btn-elegant-secondary px-8 py-3 rounded-lg">
+                    Read My Blog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light border-t border-gray-700 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="display-font text-lg mb-2 text-primary">Venkatakrishnan Asuri</p>
+            <p class="text-secondary text-sm">© 2025 Venkatakrishnan Asuri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-elegant').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Venkatakrishnan Asuri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-white: #000000;
+            --bg-light: #000000;
+            --text-primary: #eaeaec;
+            --text-secondary: #a1a1aa;
+            --accent-blue: #4ea3ff;
+            --border-light: #2a2a2e;
+            --shadow-light: 0 2px 12px rgba(0, 0, 0, 0.6);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.8);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', 'Inter', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .display-font {
+            font-family: 'SF Pro Display', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .mono-font {
+            font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-blue), #0056cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-elegant {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        
+        .card-elegant:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+            color: var(--text-secondary);
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-elegant {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn-elegant:hover {
+            background: #0056cc;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+        
+        .btn-elegant-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn-elegant-secondary:hover {
+            background: var(--accent-blue);
+            color: white;
+        }
+        
+        .blog-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-light);
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="display-font text-xl font-bold text-gradient">
+                    <a href="index.html">Venkatakrishnan Asuri</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="blog.html" class="nav-link text-accent-blue font-medium">Blog</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 bg-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="display-font text-4xl font-bold mb-6 text-gradient">My Blog</h1>
+            <p class="text-lg text-secondary mb-6">Thoughts on economics, mathematics, global affairs, and academic pursuits</p>
+            <a href="https://venkatakrishnanasuri.substack.com/" target="_blank" class="btn-elegant px-8 py-3 rounded-lg">
+                Visit My Substack Blog
+            </a>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="py-16 bg-light">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="display-font text-3xl font-bold text-center mb-10 text-gradient">Featured Articles</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blog Post 1 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-blue-600 font-medium mb-2">Grand Strategy • Geopolitics</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">A Xi-2 World</h3>
+                    <p class="text-secondary mb-4 text-sm">The recent developments in US-China relations has reflected geopolitical realities, bringing forward a new redefinition of power.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Essay</span>
+                        <a href="https://venkatakrishnanasuri.substack.com/p/a-xi-2-world" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-green-600 font-medium mb-2">Global Politics • International Relations</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">The Doctrine of Disruption</h3>
+                    <p class="text-secondary mb-4 text-sm">Since the election of President Trump, the world has been experiencing turbulence unseen since the end of the Cold War. I articulate my understanding of this new doctrine.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Essay</span>
+                        <a href="https://venkatakrishnanasuri.substack.com/p/the-doctrine-of-disruption" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-purple-600 font-medium mb-2">Economy • Commentary</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">The Indian Economy: a Commentary</h3>
+                    <p class="text-secondary mb-4 text-sm">My thoughts on the trajectory of India's economy and the key drivers shaping it.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Commentary</span>
+                        <a href="https://allthingsmacro.substack.com/p/the-indian-economy-a-commentary" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-indigo-600 font-medium mb-2">Geopolitics • Economy</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">The Recalibration</h3>
+                    <p class="text-secondary mb-4 text-sm">On the significant change in the economic and diplomatic posture of the US.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Essay</span>
+                        <a href="https://venkatakrishnanasuri.substack.com/p/the-recalibration" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-pink-600 font-medium mb-2">Risk • Second-order Effects</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Playing with Fire</h3>
+                    <p class="text-secondary mb-4 text-sm">On the second-order effects of risky actions, and how they have ended up.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Essay</span>
+                        <a href="https://venkatakrishnanasuri.substack.com/p/playing-with-fire" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card p-6 rounded-lg card-elegant">
+                    <div class="text-sm text-teal-600 font-medium mb-2">History • Theory</div>
+                    <h3 class="display-font text-xl font-semibold mb-3">Beyond Fukuyama</h3>
+                    <p class="text-secondary mb-4 text-sm">My take on the rapid shift in world dynamics since the end of the Cold War.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Essay</span>
+                        <a href="https://venkatakrishnanasuri.substack.com/p/beyond-fukuyama" target="_blank" class="text-accent-blue hover:text-blue-800 font-medium">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-14 bg-light">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="display-font text-3xl font-bold mb-6 text-gradient">Stay Updated</h2>
+            <p class="text-lg text-secondary mb-6">Follow my academic journey and explore insights on economics, mathematics, and global affairs</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://venkatakrishnanasuri.substack.com/" target="_blank" class="btn-elegant px-8 py-3 rounded-lg">
+                    Subscribe on Substack
+                </a>
+                <a href="index.html#contact" class="btn-elegant-secondary px-8 py-3 rounded-lg">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light border-t border-gray-700 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="display-font text-lg mb-2 text-primary">Venkatakrishnan Asuri</p>
+            <p class="text-secondary text-sm">© 2025 Venkatakrishnan Asuri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animate cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-elegant').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
