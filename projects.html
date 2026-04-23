@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Venkatakrishnan Asuri</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            color: #000;
+            background-color: #fff;
+            margin: 0;
+            padding: 30px 50px;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: normal;
+            margin: 0 0 15px 0;
+            letter-spacing: 0.5px;
+        }
+        nav {
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        nav a {
+            color: #0000ff;
+            text-decoration: none;
+            margin-right: 25px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            font-size: 32px;
+            font-weight: normal;
+            margin: 28px 0 15px 0;
+        }
+        h3 {
+            font-size: 20px;
+            font-weight: normal;
+            margin: 15px 0 6px 0;
+        }
+        .project {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        .project:last-child {
+            border-bottom: none;
+        }
+        .tags {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 2px;
+            border: 1px solid #ddd;
+        }
+        .date {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        p {
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+        ul {
+            margin: 6px 0 10px 18px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 6px;
+            color: #333;
+            font-size: 14px;
+        }
+        a {
+            color: #0000ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Venkatakrishnan Asuri</h1>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+</nav>
+
+<h2>Technical Projects</h2>
+
+<div class="project">
+    <h3>Forecasting with Time Series</h3>
+    <div class="date">Dec 2024 – Jul 2025</div>
+    <div class="tags">
+        <span class="tag">Time Series Analysis</span>
+        <span class="tag">IIM Ahmedabad</span>
+        <span class="tag">LaTeX/Beamer</span>
+    </div>
+    <p><strong>Advisor:</strong> Prof. Anindya S. Chakrabarti, IIM Ahmedabad</p>
+    <p>Developed a 7-module Practitioner's Toolkit on advanced econometric forecasting under faculty supervision. Consolidated Hyndman and Tsay, a widely-used primer for time series analysis into a rigorous LaTeX-based curriculum emphasizing mathematical and financial derivations.</p>
+    <p><strong>Key accomplishments:</strong></p>
+    <ul>
+        <li>Built forecasting pipelines using seasonal ARIMA and Neural Network Autoregression (NNAR)</li>
+        <li>Implemented ACF/PACF and unit root diagnostics</li>
+        <li>Validated models on corporate sales data using likelihood estimation and information criteria for optimal model selection</li>
+    </ul>
+    <p><a href="https://github.com/asurixyz/TSM">View on GitHub</a></p>
+</div>
+
+<div class="project">
+    <h3>Quantum Machine Learning beyond Kernel Methods</h3>
+    <div class="date">Aug–Nov 2025</div>
+    <div class="tags">
+        <span class="tag">Quantum Computing</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">IIT Madras</span>
+    </div>
+    <p><strong>Course:</strong> EE5180, IIT Madras</p>
+    <p>Compared explicit and implicit (kernel-based) quantum models in a course project, analyzing limits of the Representer Theorem in quantum Hilbert spaces.</p>
+    <ul>
+        <li>Designed a Havlíček feature encoding circuit using Z and ZZ gates to embed PCA-compressed Fashion-MNIST data into quantum states</li>
+        <li>Trained models using a PyTorch-based quantum pipeline, achieving test MSE 2.16×10−4 for n = 2, 3</li>
+        <li>Performed scaling analysis for n = 2 to 8, identifying a crossover at n = 4 where explicit models outperform implicit ones by up to 5x</li>
+        <li>Optimized Quantum Kernel Ridge Regression via grid search, showing optimal alpha increases with system size</li>
+    </ul>
+</div>
+
+<div class="project">
+    <h3>Spin Systems in Social Networks</h3>
+    <div class="date">Dec 2024</div>
+    <div class="tags">
+        <span class="tag">Physics</span>
+        <span class="tag">Agent-Based Modeling</span>
+        <span class="tag">IMSc Chennai</span>
+    </div>
+    <p><strong>Workshop:</strong> Institute of Mathematical Sciences, Chennai</p>
+    <p>Simulated Ising spin dynamics on random and modular social networks with up to 360 nodes using the Metropolis-Hastings algorithm.</p>
+    <ul>
+        <li>Varied edge sparsity in the 0.25–0.75 range and explored 6 inverse-temperature regimes (beta in [2, 1000])</li>
+        <li>Identified two critical inverse-temperature thresholds (beta approx 2, 10) separating noisy, oscillatory, and stable magnetization regimes</li>
+        <li>Designed and implemented a greedy zealot-placement algorithm on networks of up to 600 nodes, estimating critical zealot fractions in the 0.30–0.45 range</li>
+    </ul>
+</div>
+
+<div class="project">
+    <h3>Predicting Alpha (Quant Research)</h3>
+    <div class="date">Sep 2024</div>
+    <div class="tags">
+        <span class="tag">Quantitative Finance</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Inter IIT Quant Guild</span>
+    </div>
+    <p><strong>Competition:</strong> Inter IIT Quant Guild Selection</p>
+    <p>Developed a predictive alpha signal using Limit Order Book (LOB) data to forecast 1-second future returns.</p>
+    <ul>
+        <li>Engineered advanced market microstructure features including Order Flow Imbalance (OFI), Volume-Weighted Average Price (VWAP), and Depth Imbalance to capture liquidity pressure</li>
+        <li>Implemented a Ridge Regression model optimized via GridSearchCV</li>
+        <li>Achieved Pearson correlation of 0.429 on out-of-sample test data</li>
+    </ul>
+    <p><a href="https://github.com/asurixyz/AlphaPredictor">View on GitHub</a></p>
+</div>
+
+<div class="project">
+    <h3>Algorithmic Auction Bot</h3>
+    <div class="date">Sep 2024</div>
+    <div class="tags">
+        <span class="tag">Game Theory</span>
+        <span class="tag">Auction Mechanisms</span>
+    </div>
+    <p>Designed robust bidding agents for multi-round First-Price Sealed Bid auctions across three distinct game-theoretic variants.</p>
+    <ul>
+        <li>Implemented a Bayesian Nash Equilibrium strategy for uniform distributions</li>
+        <li>Developed adaptive volatility-based model to react to opponent aggression</li>
+        <li>Integrated risk-management module utilizing dynamic capital allocation and Gaussian noise injection to minimize exploitability</li>
+    </ul>
+    <p><a href="https://github.com/asurixyz/AuctionBot">View on GitHub</a></p>
+</div>
+
+<div class="project">
+    <h3>Global Macro Engine (Personal Project)</h3>
+    <div class="date">Nov 2025</div>
+    <div class="tags">
+        <span class="tag">Macroeconomics</span>
+        <span class="tag">Simulation</span>
+    </div>
+    <p>Designed a real-time command-terminal engine to model the interplay of monetary and fiscal policy. Featured a stochastic event system managing inflation, sovereign debt, and currency valuation over 1200 days.</p>
+    <p><a href="https://asurixyz.github.io/globalmacro">Try the demo</a></p>
+</div>
+
+<div class="project">
+    <h3>Fed Chair Simulator (Personal Project)</h3>
+    <div class="date">Oct 2025</div>
+    <div class="tags">
+        <span class="tag">DSGE Model</span>
+        <span class="tag">Economics</span>
+    </div>
+    <p>Created a high-stakes simulation for managing economic shocks using a New Keynesian DSGE framework. Implemented dynamic feedback loops for approval ratings based on 2.0% inflation and 4.5% unemployment targets.</p>
+    <p><a href="https://asurixyz.github.io/fedsim">Try the simulator</a></p>
+</div>
+
+<div class="project">
+    <h3>LUMEN: Illumination Through Data (Personal Project)</h3>
+    <div class="date">Aug 2025</div>
+    <div class="tags">
+        <span class="tag">Geopolitics</span>
+        <span class="tag">Data Visualization</span>
+    </div>
+    <p>Built a centralized intelligence dashboard visualizing the structural forces of the 21st century across global, regional, and maritime domains.</p>
+    <ul>
+        <li>Developed interactive geospatial modules to map trade partnerships and investment flows within critical maritime corridors</li>
+        <li>Integrated long-range national indicators (2000–2022) to model the interplay between economic development and strategic competition</li>
+    </ul>
+    <p><a href="https://asurixyz.github.io/LUMEN/">View the dashboard</a></p>
+</div>
+
+</body>
+</html>
